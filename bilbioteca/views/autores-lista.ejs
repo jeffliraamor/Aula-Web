@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Listagem de Autores</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Listagem de Autores</h1>
+    <p>Welcome to <%form (item of resultado){%>
+
+       <%= iten.IdAutor%>  | <%= iten.NoAutor%> | <%= item.NoNacionalidade%>
+    <%}%></p>
+    <form action="/autores/altera/1" method="put">
+      <input type="text">
+      <button type="submit">enviar</button>
+    </form>
+  </body>
+</html>
