@@ -3,7 +3,7 @@ let db = require('../utils/db.js')
 var router = express.Router();
 
 router.get('/listar', function(req, res) {
-  let cmd = 'SELECT idnacionalidade, NoNacionalidade FROM tbnacionalidade ORDER BY Nonacionalidade;'; 
+  let cmd = 'SELECT IdNacionalidade, NoNacionalidade FROM tbnacionalidade ORDER BY NoNacionalidade;'; 
   db.query(cmd, [], function(erro, listagem) { 
     if (erro) {
       res.send(erro);

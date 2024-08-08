@@ -18,7 +18,7 @@
                         $("#inputNacionalidade").html("<option selected>(informe)</option>");
                         $.each(res.resultado, function(key, value){
                             $("#inputNacionalidade").append(
-                                "<option value='" + value.IdNacionalidade + "'>" + value.NoNacionalidade + "</option>"
+                                "<option value='" + value.IdNacionalidade + "''>" + value.NoNacionalidade + "</option>"
                             );
                         });
                     }
@@ -29,14 +29,14 @@
     </script>
 </head>
 <body>
-    <form class="row g-3">
+    <form method="post" action="/autores/add" class="row g-3">
         <div class="col-6">
             <label for="inputAutores" class="form-label">Autor</label>
-            <input type="text" class="form-control" id="inputAutores" placeholder="Nome">
+            <input type="text" class="form-control" id="inputAutores" name="nome" placeholder="Nome">
         </div>
         <div class="col-md-6">
             <label for="inputNacionalidade" class="form-label">Nacionalidade</label>
-            <select id="inputNacionalidade" class="form-select">
+            <select id="inputNacionalidade" class="form-select" name="nacionalidade">
                 <option selected>Choose...</option>
             </select>
         </div>
