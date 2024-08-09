@@ -29,10 +29,21 @@
     </script>
 </head>
 <body>
+    <% if (resultado.IdAutor) {%>
+        <input type="hidden" id="IdNacionalidade" name="IdNacionalidade" value="<%=resultado.IdNacionalidade%>">
+        <h1>Alterar Autores</h1>
+        <form method="#" action="/autores/edit/<%=resultado.IdAutor%>" class="row g-3">
+    <%} else {%>
+        <h1>Cadastrar Autores/h1>
     <form method="post" action="/autores/add" class="row g-3">
+    <%}%>
         <div class="col-6">
             <label for="inputAutores" class="form-label">Autor</label>
-            <input type="text" class="form-control" id="inputAutores" name="nome" placeholder="Nome">
+            <% if (resultado.IdAutor) {%>
+                <input type="text" class="form-control" id="inputAutores" name="nome" placeholder="Nome" value="<%=resultado.NoAutor%>"
+            <%} else {%>
+                <input type="text" class="form-control" id="inputAutores" name="nome" placeholder="Nome">
+            <%}%>
         </div>
         <div class="col-md-6">
             <label for="inputNacionalidade" class="form-label">Nacionalidade</label>

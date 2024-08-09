@@ -34,5 +34,15 @@ router.get('/add', function(req, res) {
     });
   });
   
+router.get('/edit/:id', function(req, res) {
+  let id = req.params.id;
+  let cmd = 'SELECT IdAutor, NoAutor, IdNacionalidade FROM tbautor WHERE IdAutor = ?;';
+  db.query(cmd, [id], function(erro, listagem) { 
+    if (erro) {
+      res.send(erro);
+    }
+    res.render('autores-add', { resultado: listagem[0] });
+  });
+});
 
 module.exports = router;
