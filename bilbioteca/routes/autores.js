@@ -57,7 +57,7 @@ router.put('/edit/:id', function(req, res) {
   });
 });
 
-router.delete('/delete/:id', function(req, res) {
+router.get('/delete/:id', function(req, res) {
   let id = req.params.id;
 
   let cmd = 'DELETE FROM tbautor WHERE IdAutor = ?;';
