@@ -15,16 +15,21 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th>Autor</th>
-          <th>Nacionalidade</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Nacionalidade</th>
+          <th scope="col">Operações</th>
         </tr>
       </thead>
       <tbody>
          <% for (let item of resultado) { %>
             <tr>
-              <td scope="col"><%= item.idAutor %></td>
-              <td><%= item.NoAutor %></td>
-              <td><%= item.NoNacionalidade %></td>
+              <td scope="row"><%= item.idAutor %></td>
+              <td scope="row"><%= item.NoAutor %></td>
+              <td scope="row"><%= item.NoNacionalidade %></td>
+              <td>
+                <a href="/autores/edit/<%=item.idAutor%>" class="btn btn-primary">Editar</a>
+                <a href="/autores/delete/<%=item.idAutor%>" class="btn btn-danger">Excluir</a>
+              </td>
             </tr>
           <%} %>
       </tbody>
